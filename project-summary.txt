@@ -1,0 +1,411 @@
+========== PROJECT STRUCTURE ==========
+./app/admin/coupons/page.tsx
+./app/admin/customers/page.tsx
+./app/admin/emails/[id]/preview/route.ts
+./app/admin/emails/page.tsx
+./app/admin/inventory/page.tsx
+./app/admin/layout.tsx
+./app/admin/loading.tsx
+./app/admin/notifications/page.tsx
+./app/admin/orders/[id]/page.tsx
+./app/admin/orders/page.tsx
+./app/admin/page.tsx
+./app/admin/products/[id]/page.tsx
+./app/admin/products/new/page.tsx
+./app/admin/products/page.tsx
+./app/admin/reviews/page.tsx
+./app/api/auth/google/callback/route.ts
+./app/api/auth/google/route.ts
+./app/api/health/route.ts
+./app/api/search/route.ts
+./app/(auth)/forgot-password/page.tsx
+./app/(auth)/layout.tsx
+./app/(auth)/login/page.tsx
+./app/(auth)/register/page.tsx
+./app/(auth)/reset-password/page.tsx
+./app/(auth)/verify-email/page.tsx
+./app/error.tsx
+./app/globals.css
+./app/invoice/[orderNumber]/page.tsx
+./app/layout.tsx
+./app/media/[...key]/route.ts
+./app/not-found.tsx
+./app/robots.ts
+./app/sitemap.ts
+./app/(store)/account/addresses/page.tsx
+./app/(store)/account/layout.tsx
+./app/(store)/account/loading.tsx
+./app/(store)/account/notifications/page.tsx
+./app/(store)/account/orders/[orderNumber]/page.tsx
+./app/(store)/account/orders/page.tsx
+./app/(store)/account/page.tsx
+./app/(store)/account/profile/page.tsx
+./app/(store)/account/reviews/page.tsx
+./app/(store)/account/rewards/page.tsx
+./app/(store)/account/security/page.tsx
+./app/(store)/cart/loading.tsx
+./app/(store)/cart/page.tsx
+./app/(store)/checkout/page.tsx
+./app/(store)/compare/page.tsx
+./app/(store)/help/page.tsx
+./app/(store)/layout.tsx
+./app/(store)/page.tsx
+./app/(store)/product/[slug]/page.tsx
+./app/(store)/shop/loading.tsx
+./app/(store)/shop/page.tsx
+./app/(store)/wishlist/page.tsx
+./components/account/account-nav.tsx
+./components/account/address-book.tsx
+./components/account/cancel-order.tsx
+./components/account/email-security.tsx
+./components/account/forms.tsx
+./components/account/order-status.tsx
+./components/account/review-row-actions.tsx
+./components/admin/broadcast-form.tsx
+./components/admin/charts.tsx
+./components/admin/coupon-manager.tsx
+./components/admin/email-log.tsx
+./components/admin/order-actions.tsx
+./components/admin/pager.tsx
+./components/admin/product-form.tsx
+./components/admin/product-row-actions.tsx
+./components/admin/review-moderation.tsx
+./components/admin/role-select.tsx
+./components/admin/sidebar.tsx
+./components/admin/stock-adjust.tsx
+./components/admin/table-search.tsx
+./components/auth/auth-form.tsx
+./components/auth/google-button.tsx
+./components/auth/password-forms.tsx
+./components/cart/cart-page.tsx
+./components/cart/compare-actions.tsx
+./components/cart/wishlist-list.tsx
+./components/checkout/address-form.tsx
+./components/checkout/checkout-flow.tsx
+./components/product/gallery.tsx
+./components/product/purchase-panel.tsx
+./components/product/review-form.tsx
+./components/product/view-tracker.tsx
+./components/shared/logo.tsx
+./components/shared/price.tsx
+./components/shared/print-button.tsx
+./components/shared/rating.tsx
+./components/shared/stock-status.tsx
+./components/store/cart-drawer.tsx
+./components/store/cart-lines.tsx
+./components/store/countdown.tsx
+./components/store/footer.tsx
+./components/store/mobile-nav.tsx
+./components/store/navbar.tsx
+./components/store/newsletter-form.tsx
+./components/store/notifications-menu.tsx
+./components/store/product-card.tsx
+./components/store/product-rail.tsx
+./components/store/search-dialog.tsx
+./components/store/section.tsx
+./components/store/shop-filters.tsx
+./components/store/store-provider.tsx
+./components/ui/accordion.tsx
+./components/ui/badge.tsx
+./components/ui/button.tsx
+./components/ui/dialog.tsx
+./components/ui/dropdown-menu.tsx
+./components/ui/input.tsx
+./components/ui/label.tsx
+./components/ui/skeleton.tsx
+./components/ui/slider.tsx
+./components/ui/states.tsx
+./components/ui/tabs.tsx
+./.env
+./.env.example
+./eslint.config.mjs
+./.gitignore
+./lib/actions/admin.ts
+./lib/actions/auth.ts
+./lib/actions/browse.ts
+./lib/actions/cart.ts
+./lib/actions/checkout.ts
+./lib/actions/engagement.ts
+./lib/actions/wishlist.ts
+./lib/auth/constants.ts
+./lib/auth/guards.ts
+./lib/auth/messages.ts
+./lib/auth/password.ts
+./lib/auth/providers.ts
+./lib/auth/session.ts
+./lib/auth/tokens.ts
+./lib/db.ts
+./lib/email/index.ts
+./lib/email/providers.ts
+./lib/email/templates.ts
+./lib/errors.ts
+./lib/format.ts
+./lib/logger.ts
+./lib/money.ts
+./lib/payments/index.ts
+./lib/payments/mock.ts
+./lib/payments/razorpay.ts
+./lib/payments/types.ts
+./lib/rate-limit.ts
+./lib/services/analytics.ts
+./lib/services/cart.ts
+./lib/services/catalog.ts
+./lib/services/coupon.ts
+./lib/services/email-events.ts
+./lib/services/inventory.ts
+./lib/services/notification.ts
+./lib/services/order.ts
+./lib/services/pricing.ts
+./lib/services/review.ts
+./lib/services/rewards.ts
+./lib/services/wishlist.ts
+./lib/storage/index.ts
+./lib/utils.ts
+./lib/validation/auth.ts
+./lib/validation/catalog.ts
+./lib/validation/checkout.ts
+./middleware.ts
+./next.config.ts
+./next-env.d.ts
+./package.json
+./package-lock.json
+./postcss.config.mjs
+./prisma/data/products.ts
+./prisma/migrations/20260924053835_init/migration.sql
+./prisma/migrations/20260924053938_discount_percent/migration.sql
+./prisma/migrations/20260924071908_auth_tokens_email/migration.sql
+./prisma/migrations/20260924072227_account_email/migration.sql
+./prisma/migrations/migration_lock.toml
+./prisma/schema.prisma
+./prisma/seed-catalog.ts
+./prisma/seed.ts
+./project-summary.txt
+./README.md
+./scripts/process-images.mjs
+./storage/uploads/.gitkeep
+./tests/auth-email.mjs
+./tests/e2e.mjs
+./tests/mail-catcher.mjs
+./tests/mock-google.mjs
+./tsconfig.json
+./types/index.ts
+
+========== PACKAGE.JSON ==========
+{
+  "name": "nova",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "db:seed": "prisma db seed",
+    "db:migrate": "prisma migrate deploy",
+    "db:reset": "prisma migrate reset --force",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "node --env-file=.env tests/e2e.mjs",
+    "postinstall": "prisma generate",
+    "test:auth": "node --env-file=.env tests/auth-email.mjs",
+    "test:mail": "node tests/mail-catcher.mjs",
+    "test:google": "node tests/mock-google.mjs"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "@radix-ui/react-accordion": "^1.2.20",
+    "@radix-ui/react-dialog": "^1.1.23",
+    "@radix-ui/react-dropdown-menu": "^2.1.24",
+    "@radix-ui/react-label": "^2.1.15",
+    "@radix-ui/react-popover": "^1.1.23",
+    "@radix-ui/react-slider": "^1.4.7",
+    "@radix-ui/react-slot": "^1.3.3",
+    "@radix-ui/react-tabs": "^1.1.21",
+    "bcryptjs": "^3.0.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^13.4.2",
+    "jose": "^6.2.12",
+    "lucide-react": "^1.47.0",
+    "next": "15.5.26",
+    "nodemailer": "^10.0.10",
+    "prisma": "^6.19.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "recharts": "^3.10.1",
+    "server-only": "^0.0.1",
+    "sonner": "^2.0.8",
+    "tailwind-merge": "^3.7.0",
+    "tsx": "^4.23.15",
+    "tw-animate-css": "^1.4.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/nodemailer": "^8.0.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.26",
+    "mailparser": "^3.9.28",
+    "playwright": "^1.59.0",
+    "smtp-server": "^3.19.13",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  }
+}
+
+========== .ENV.EXAMPLE ==========
+# ── Database ─────────────────────────────────────────
+DATABASE_URL="postgresql://USER:PASSWORD@localhost:5432/nova?schema=public"
+
+# ── Auth ─────────────────────────────────────────────
+# 32+ random chars. Generate: openssl rand -hex 32
+AUTH_SECRET=""
+# Google sign-in (optional). Leave empty to hide it — the button shows as unavailable.
+# Google Cloud Console → Credentials → OAuth client ID (Web application)
+# Authorized redirect URI: ${NEXT_PUBLIC_APP_URL}/api/auth/google/callback
+GOOGLE_CLIENT_ID=""
+GOOGLE_CLIENT_SECRET=""
+# Test-only overrides (used by tests/mock-google.mjs). Never set these in production.
+# GOOGLE_AUTH_URL="http://localhost:4455/auth"
+# GOOGLE_TOKEN_URL="http://localhost:4455/token"
+# GOOGLE_JWKS_URL="http://localhost:4455/jwks"
+# GOOGLE_ISSUER="http://localhost:4455"
+
+# ── Email ────────────────────────────────────────────
+# console (dev: prints to server log) | smtp | resend
+EMAIL_PROVIDER="console"
+EMAIL_FROM="NOVA <no-reply@yourdomain.com>"
+EMAIL_REPLY_TO=""
+# SMTP (Gmail app password, Zoho, SES SMTP, Mailgun, Brevo…)
+SMTP_HOST=""
+SMTP_PORT="587"
+SMTP_USER=""
+SMTP_PASS=""
+SMTP_SECURE="false"
+# Resend (https://resend.com) — verify your sending domain first
+RESEND_API_KEY=""
+
+# ── Payments ─────────────────────────────────────────
+# mock | razorpay | stripe
+PAYMENT_PROVIDER="mock"
+PAYMENT_SECRET=""
+RAZORPAY_KEY_ID=""
+RAZORPAY_KEY_SECRET=""
+STRIPE_SECRET_KEY=""
+
+# ── Storage ──────────────────────────────────────────
+# local | cloudinary | s3
+STORAGE_PROVIDER="local"
+CLOUDINARY_URL=""
+S3_BUCKET=""
+S3_REGION=""
+
+NEXT_PUBLIC_APP_URL="http://localhost:3000"
+
+========== PRISMA SCHEMA (first 100 lines) ==========
+// NOVA — normalized relational schema
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  CUSTOMER
+  ADMIN
+}
+
+enum ProductStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PACKED
+  SHIPPED
+  OUT_FOR_DELIVERY
+  DELIVERED
+  CANCELLED
+}
+
+enum PaymentMethod {
+  UPI
+  CARD
+  NET_BANKING
+  COD
+  TEST
+}
+
+enum PaymentStatus {
+  PENDING
+  AUTHORIZED
+  CAPTURED
+  FAILED
+  REFUNDED
+}
+
+enum DeliveryMethod {
+  STANDARD
+  EXPRESS
+}
+
+enum DiscountType {
+  PERCENTAGE
+  FIXED
+}
+
+enum InventoryReason {
+  PURCHASE
+  RESTOCK
+  ORDER
+  ORDER_CANCELLED
+  ADJUSTMENT
+  DAMAGED
+  RETURN
+}
+
+enum NotificationType {
+  ORDER_CONFIRMED
+  ORDER_SHIPPED
+  ORDER_DELIVERED
+  ORDER_CANCELLED
+  ORDER_UPDATE
+  PRICE_DROP
+  BACK_IN_STOCK
+  PROMOTIONAL
+}
+
+enum RewardType {
+  EARNED
+  REDEEMED
+  REVERSED
+  ADJUSTED
+}
+
+enum ReviewStatus {
+  PENDING
+  APPROVED
+  HIDDEN
+}
+
+// ───────────────────────── Identity ─────────────────────────
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  emailVerified DateTime?
+  passwordHash  String?
+  phone         String?
