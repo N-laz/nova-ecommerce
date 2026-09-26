@@ -21,13 +21,6 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
       {reset && <SuccessNote className="mb-4">Your password has been reset. Sign in with your new password.</SuccessNote>}
       {errorText && <ErrorNote className="mb-4">{errorText}</ErrorNote>}
       <AuthForm mode="login" next={safe} googleEnabled={isGoogleEnabled()} />
-      {process.env.NODE_ENV === "development" && (
-        <div className="mt-8 rounded-xl p-3 text-xs text-muted hairline">
-          <p className="mb-1 font-medium text-foreground/80">Demo accounts</p>
-          <p>Customer: customer@nova.dev / Customer@123</p>
-          <p>Admin: admin@nova.dev / Admin@12345</p>
-        </div>
-      )}
     </>
   );
 }
