@@ -46,3 +46,10 @@ next-env.d.ts
 
 /storage/uploads/*
 !/storage/uploads/.gitkeep
+.env
+.env.local
+.env.backup-*
+.env.broken-*
+.env.old-*
+prisma/seed.ts.full-backup-*
+prisma/seed.ts.bak-*
