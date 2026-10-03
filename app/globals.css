@@ -29,6 +29,30 @@
   --radius-xl: 20px;
   --radius-2xl: 28px;
 
+  /* ── Type scale ─────────────────────────────────────────────────────────── */
+  /* xs  : labels, badges, captions          */
+  --text-xs:   0.6875rem; /* 11px */
+  /* sm  : secondary body, nav links         */
+  --text-sm:   0.8125rem; /* 13px */
+  /* base: primary body                      */
+  --text-base: 0.9375rem; /* 15px */
+  /* md  : product names, list items         */
+  --text-md:   1rem;      /* 16px */
+  /* lg  : sub-headings                      */
+  --text-lg:   1.125rem;  /* 18px */
+  /* xl  : section sub-titles                */
+  --text-xl:   1.25rem;   /* 20px */
+  /* 2xl : card titles, h3                   */
+  --text-2xl:  1.375rem;  /* 22px */
+  /* 3xl : section headings (mobile)         */
+  --text-3xl:  1.75rem;   /* 28px */
+  /* 4xl : section headings (desktop)        */
+  --text-4xl:  2.125rem;  /* 34px */
+  /* 5xl : hero sub-headline                 */
+  --text-5xl:  2.75rem;   /* 44px */
+  /* 6xl : hero headline (desktop)           */
+  --text-6xl:  5.25rem;   /* 84px */
+
   --animate-shimmer: shimmer 1.6s linear infinite;
   @keyframes shimmer {
     0% { background-position: -400px 0; }
@@ -84,6 +108,14 @@ body {
     background: linear-gradient(90deg, #15171d 0px, #1d2027 120px, #15171d 240px);
     background-size: 800px 100%;
     animation: var(--animate-shimmer);
+  }
+  /* Fixed-height title area so product-card action row stays aligned */
+  .card-title-area {
+    min-height: 2.75rem; /* accommodates ~2 lines at text-[15px]/snug */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
 }
 

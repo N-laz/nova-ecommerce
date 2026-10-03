@@ -24,7 +24,7 @@ export function ProductCard({ product, priority, className }: { product: Product
       initial={false}
       whileHover={{ y: -3 }}
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
-      className={cn("group relative flex flex-col overflow-hidden rounded-2xl bg-card hairline", className)}
+      className={cn("group relative flex min-w-0 flex-col overflow-hidden rounded-2xl bg-card hairline", className)}
     >
       <div className="relative aspect-square overflow-hidden bg-[#111318]">
         <Link href={`/product/${product.slug}`} aria-label={product.name} className="absolute inset-0">
@@ -34,7 +34,7 @@ export function ProductCard({ product, priority, className }: { product: Product
               alt={product.imageAlt}
               fill
               priority={priority}
-              sizes="(min-width:1280px) 22vw, (min-width:768px) 30vw, 48vw"
+              sizes="(min-width:1280px) 22vw, (min-width:768px) 30vw, (min-width:640px) 44vw, 75vw"
               className={cn("object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]", out && "opacity-50 grayscale-[40%]")}
             />
           ) : (
@@ -71,18 +71,19 @@ export function ProductCard({ product, priority, className }: { product: Product
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col gap-2 p-4">
+      <div className="flex flex-1 flex-col gap-2 p-3.5 sm:p-4 min-w-0">
         <div className="flex items-center justify-between gap-2 text-[11px] uppercase tracking-[0.14em] text-muted">
           <span className="truncate">{product.brand}</span>
           <RatingInline avg={product.ratingAvg} count={product.ratingCount} className="normal-case tracking-normal" />
         </div>
-        <h3 className="line-clamp-2 text-[15px] font-medium leading-snug">
+        {/* card-title-area enforces a fixed 2-line height so action rows align across all cards */}
+        <h3 className="card-title-area text-[15px] font-medium leading-snug">
           <Link href={`/product/${product.slug}`} className="hover:text-white/80">{product.name}</Link>
         </h3>
-        <div className="mt-auto flex items-end justify-between gap-2 pt-1">
-          <div className="space-y-1">
+        <div className="mt-auto flex items-end justify-between gap-2 pt-1 min-w-0">
+          <div className="min-w-0 flex-1 space-y-1">
             <Price price={product.price} compareAt={product.compareAtPrice} discount={product.discountPercent} />
-            <StockStatus stock={product.stock} low={product.lowStockThreshold} />
+            <StockStatus stock={product.stock} low={product.lowStockThreshold} subtle />
           </div>
           <button
             type="button"
@@ -90,7 +91,7 @@ export function ProductCard({ product, priority, className }: { product: Product
             onClick={() => addToCart(product.id)}
             aria-label={out ? `${product.name} is currently unavailable` : `Add ${product.name} to cart`}
             title={out ? "Currently unavailable" : "Add to cart"}
-            className="grid size-10 shrink-0 place-items-center rounded-full bg-white text-black transition hover:bg-accent hover:text-white disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-white/30 cursor-pointer"
+            className="grid size-9 shrink-0 place-items-center rounded-full bg-white text-black transition hover:bg-accent hover:text-white disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-white/30 cursor-pointer sm:size-10"
           >
             {adding ? <Loader2 className="size-4 animate-spin" /> : <Plus className="size-4" />}
           </button>

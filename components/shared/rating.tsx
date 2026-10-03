@@ -20,7 +20,7 @@ export function Stars({ value, size = 14, className }: { value: number; size?: n
 }
 
 export function RatingInline({ avg, count, className }: { avg: number; count: number; className?: string }) {
-  if (!count) return <span className={cn("text-xs text-subtle", className)}>No reviews yet</span>;
+  if (!count) return null;
   return (
     <span className={cn("inline-flex items-center gap-1.5 text-xs text-muted", className)}>
       <Stars value={avg} size={12} />

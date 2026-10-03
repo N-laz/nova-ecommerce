@@ -18,9 +18,16 @@ export function Footer() {
         {COLS.map((c) => (
           <div key={c.title}>
             <p className="text-xs uppercase tracking-[0.16em] text-subtle">{c.title}</p>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-2 space-y-0.5 md:mt-4 md:space-y-1">
               {c.links.map(([label, href]) => (
-                <li key={href}><Link href={href} className="text-sm text-muted transition hover:text-foreground">{label}</Link></li>
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="inline-flex min-h-[44px] items-center text-sm text-muted transition hover:text-foreground md:min-h-0 md:py-1.5 focus-visible:text-foreground"
+                  >
+                    {label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>

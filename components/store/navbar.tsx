@@ -48,7 +48,7 @@ export function Navbar({ unread }: { unread: number }) {
 
   return (
     <header className={cn("sticky top-0 z-40 transition-colors duration-300", scrolled ? "glass border-b border-border" : "border-b border-transparent")}>
-      <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 md:px-6">
+      <div className="mx-auto flex h-16 max-w-7xl items-center gap-2 px-4 md:px-6">
         <Dialog>
           <DialogTrigger asChild>
             <button className="grid size-9 place-items-center rounded-full hover:bg-white/6 lg:hidden cursor-pointer" aria-label="Open menu">
