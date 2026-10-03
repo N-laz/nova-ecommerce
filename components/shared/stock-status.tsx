@@ -7,7 +7,7 @@ export function StockStatus({ stock, low, className, subtle = false }: { stock: 
   // always shown because those are actionable signals for the shopper.
   if (subtle && state === "in") return null;
   return (
-    <span className={cn("inline-flex items-center gap-1.5 text-xs", state === "out" ? "text-danger" : state === "low" ? "text-warning" : "text-success", className)}>
+    <span className={cn("inline-flex items-center gap-1.5 text-[12px]", state === "out" ? "text-danger" : state === "low" ? "text-warning" : "text-success", className)}>
       <span className={cn("size-1.5 rounded-full", state === "out" ? "bg-danger" : state === "low" ? "bg-warning" : "bg-success")} aria-hidden="true" />
       {state === "out" ? "Currently unavailable" : state === "low" ? `Only ${stock} left` : "In stock"}
     </span>

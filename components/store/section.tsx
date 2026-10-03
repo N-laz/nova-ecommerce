@@ -11,7 +11,7 @@ export function Section({ eyebrow, title, href, linkLabel = "View all", children
           <h2 className="text-2xl font-semibold tracking-tight text-balance md:text-[34px] md:leading-tight">{title}</h2>
         </div>
         {href && (
-          <Link href={href} className="group flex shrink-0 items-center gap-1.5 text-sm text-muted transition hover:text-foreground">
+          <Link href={href} className="group mb-1.5 flex shrink-0 items-center gap-1.5 text-sm text-muted transition hover:text-foreground">
             {linkLabel} <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
         )}

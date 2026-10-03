@@ -106,10 +106,10 @@ export function PurchasePanel({ productId, colors, stock, lowStockThreshold, max
       )}
 
       <div className="flex gap-2">
-        <Button variant="ghost" size="sm" onClick={() => toggleWishlist(productId)} aria-pressed={wished}>
+        <Button variant="ghost" size="sm" className="min-h-[44px]" onClick={() => toggleWishlist(productId)} aria-pressed={wished}>
           <Heart className={cn(wished && "fill-[#ff5a7a] text-[#ff5a7a]")} /> {wished ? "Saved" : "Add to wishlist"}
         </Button>
-        <Button variant="ghost" size="sm" onClick={() => toggleCompare(productId)} aria-pressed={compare.includes(productId)}>
+        <Button variant="ghost" size="sm" className="min-h-[44px]" onClick={() => toggleCompare(productId)} aria-pressed={compare.includes(productId)}>
           <GitCompareArrows /> {compare.includes(productId) ? "Comparing" : "Compare"}
         </Button>
       </div>

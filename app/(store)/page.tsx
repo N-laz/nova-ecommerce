@@ -109,12 +109,12 @@ export default async function HomePage() {
             >
               <div className="relative aspect-[4/3.4]">
                 {c.image && <Image src={c.image} alt="" fill sizes="(min-width:768px) 25vw, 50vw" className="object-cover opacity-80 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
               </div>
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-4">
                 <div>
-                  <h3 className="font-medium">{c.name}</h3>
-                  <p className="text-xs text-muted">{c._count.products} products</p>
+                  <h3 className="font-medium text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">{c.name}</h3>
+                  <p className="text-xs text-white/75 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">{c._count.products} products</p>
                 </div>
                 <span className="grid size-8 place-items-center rounded-full bg-white/10 opacity-0 transition group-hover:opacity-100"><ArrowRight className="size-4" /></span>
               </div>
@@ -158,12 +158,12 @@ export default async function HomePage() {
       </Section>
 
       <Section eyebrow="Official partner" title="Featured brands" href="/shop" linkLabel="Shop all brands">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
+        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 lg:gap-3.5">
           {brands.map((b) => (
             <Link
               key={b.id}
               href={`/shop?brand=${b.slug}`}
-              className="group relative flex min-h-[5.5rem] flex-col items-center justify-center gap-1.5 rounded-2xl bg-card p-4 hairline transition duration-300 hover:bg-elevated hover:shadow-[0_0_0_1px_rgb(124_92_252/0.3),0_4px_24px_-4px_rgb(0_0_0/0.4)]"
+              className="group relative flex min-h-[4.25rem] flex-col items-center justify-center gap-1 rounded-2xl bg-card px-3.5 py-3 hairline transition duration-300 hover:bg-elevated hover:shadow-[0_0_0_1px_rgb(124_92_252/0.3),0_4px_24px_-4px_rgb(0_0_0/0.4)] sm:min-h-[4.75rem] sm:p-3.5"
               aria-label={`Shop ${b.name} — ${b._count.products} products`}
             >
               {/* Subtle accent glow on hover */}

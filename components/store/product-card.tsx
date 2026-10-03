@@ -41,22 +41,22 @@ export function ProductCard({ product, priority, className }: { product: Product
             <div className="grid h-full place-items-center text-sm text-muted">No image</div>
           )}
         </Link>
-        <div className="pointer-events-none absolute left-3 top-3 flex flex-col items-start gap-1.5">
-          {product.discountPercent >= 5 && <Badge variant="solid">−{product.discountPercent}%</Badge>}
+        <div className="pointer-events-none absolute left-3 top-3 z-10 flex max-w-[calc(100%-4.5rem)] flex-col items-start gap-1.5">
+          {out && <Badge variant="danger">Sold out</Badge>}
           {product.isNew && <Badge variant="accent">New</Badge>}
           {product.trending && !product.isNew && <Badge>Trending</Badge>}
-          {out && <Badge variant="danger">Sold out</Badge>}
+          {product.discountPercent >= 5 && <Badge variant="solid">−{product.discountPercent}%</Badge>}
         </div>
-        <div className="absolute right-3 top-3 flex flex-col gap-1.5">
+        <div className="absolute right-3 top-3 z-10 flex flex-col gap-1.5">
           <button
             type="button"
             onClick={() => toggleWishlist(product.id)}
             aria-label={wished ? `Remove ${product.name} from wishlist` : `Save ${product.name} to wishlist`}
             aria-pressed={wished}
-            className="grid size-9 place-items-center rounded-full glass hairline transition hover:scale-105 cursor-pointer"
+            className="relative grid size-11 place-items-center rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-white shadow-sm transition hover:scale-105 hover:bg-black/90 hover:border-white/40 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 focus-visible:rounded-full cursor-pointer sm:size-9"
           >
             <motion.span key={String(wished)} initial={{ scale: 0.6 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 500, damping: 18 }}>
-              <Heart className={cn("size-4", wished ? "fill-[#ff5a7a] text-[#ff5a7a]" : "text-white/80")} />
+              <Heart className={cn("size-4", wished ? "fill-[#ff5a7a] text-[#ff5a7a]" : "text-white")} />
             </motion.span>
           </button>
           <button
@@ -64,9 +64,12 @@ export function ProductCard({ product, priority, className }: { product: Product
             onClick={() => toggleCompare(product.id)}
             aria-label={comparing ? `Remove ${product.name} from comparison` : `Compare ${product.name}`}
             aria-pressed={comparing}
-            className={cn("grid size-9 place-items-center rounded-full glass hairline transition hover:scale-105 cursor-pointer md:opacity-0 md:group-hover:opacity-100 md:focus-visible:opacity-100", comparing && "md:opacity-100 text-accent")}
+            className={cn(
+              "relative grid size-11 place-items-center rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-white shadow-sm transition hover:scale-105 hover:bg-black/90 hover:border-white/40 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 focus-visible:rounded-full cursor-pointer sm:size-9 md:opacity-0 md:group-hover:opacity-100 md:focus-visible:opacity-100",
+              comparing && "md:opacity-100 text-accent border-accent/40"
+            )}
           >
-            {comparing ? <Check className="size-4" /> : <GitCompareArrows className="size-4 text-white/80" />}
+            {comparing ? <Check className="size-4 text-accent" /> : <GitCompareArrows className="size-4 text-white" />}
           </button>
         </div>
       </div>
@@ -91,7 +94,7 @@ export function ProductCard({ product, priority, className }: { product: Product
             onClick={() => addToCart(product.id)}
             aria-label={out ? `${product.name} is currently unavailable` : `Add ${product.name} to cart`}
             title={out ? "Currently unavailable" : "Add to cart"}
-            className="grid size-9 shrink-0 place-items-center rounded-full bg-white text-black transition hover:bg-accent hover:text-white disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-white/30 cursor-pointer sm:size-10"
+            className="grid size-11 shrink-0 place-items-center rounded-full bg-white text-black transition hover:bg-accent hover:text-white disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-white/30 cursor-pointer sm:size-10"
           >
             {adding ? <Loader2 className="size-4 animate-spin" /> : <Plus className="size-4" />}
           </button>

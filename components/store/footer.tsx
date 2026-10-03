@@ -34,9 +34,9 @@ export function Footer() {
         ))}
       </div>
       <div className="border-t border-border">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-subtle md:flex-row md:px-6">
-          <p>© {new Date().getFullYear()} NOVA Technologies Pvt. Ltd. All prices include GST.</p>
-          <p>Demo store — payments run in test mode.</p>
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-center text-[12px] text-subtle md:flex-row md:text-left md:px-6">
+          <p className="text-pretty">© {new Date().getFullYear()} NOVA Technologies Pvt. Ltd. All prices include GST.</p>
+          <p className="text-pretty">Demo store — payments run in test mode.</p>
         </div>
       </div>
     </footer>
